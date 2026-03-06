@@ -1,0 +1,13 @@
+[tool.poetry]
+name = "gsheet-mcp"
+version = "0.1.0"
+description = "Gsheet MCP server"
+
+[tool.poetry.dependencies]
+python="^3.11"
+fastmcp="*"
+mcp
+pandas
+openpyxl
+requests
+dotenv
