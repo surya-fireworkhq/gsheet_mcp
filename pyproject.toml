@@ -5,9 +5,9 @@ description = "Gsheet MCP server"
 
 [tool.poetry.dependencies]
 python="^3.11"
-fastmcp="*"
-mcp
-pandas
-openpyxl
-requests
-dotenv
+fastmcp="^2.14.5"
+mcp="^1.26.0"
+pandas="3.0.0"
+openpyxl="3.1.5"
+requests="2.32.5"
+dotenv="0.9.9"
