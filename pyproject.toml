@@ -3,6 +3,9 @@ name = "gsheet-mcp"
 version = "0.1.0"
 description = "Gsheet MCP server"
 
+[tool.poetry.scripts]
+gsheet-mcp = "gsheet-mcp.server:main"
+
 [tool.poetry.dependencies]
 python="^3.11"
 fastmcp="^2.14.5"
