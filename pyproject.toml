@@ -1,16 +1,20 @@
 [tool.poetry]
 name = "gsheet-mcp"
 version = "0.1.0"
-description = "Gsheet MCP server"
+description = "Google Sheet MCP server"
+packages = [{include = "gsheet_mcp"}]
 
 [tool.poetry.dependencies]
-python="^3.11"
-fastmcp="^2.14.5"
-mcp="^1.26.0"
-pandas="3.0.0"
-openpyxl="3.1.5"
-requests="2.32.5"
-dotenv="0.9.9"
+python = "^3.11"
+fastmcp = "^2.14.5"
+mcp = "^1.26.0"
+pandas = "3.0.0"
+openpyxl = "3.1.5"
+requests = "2.32.5"
 
 [tool.poetry.scripts]
-gsheet-mcp = "gsheet-mcp.server:main"
+gsheet-mcp = "gsheet_mcp.server:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

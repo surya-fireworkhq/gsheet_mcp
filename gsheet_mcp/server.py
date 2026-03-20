@@ -3,12 +3,11 @@ import requests
 import json
 import os
 from mcp.server.fastmcp import FastMCP
-from dotenv import load_dotenv
 
 
 # Initialize MCP Server
 mcp = FastMCP("GoogleSheetDownloader")
-load_dotenv()
+
 # --- Configuration ---
 APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyx5ChHRVhPBQxWGYLQL5CJr0M30Xyel8puf98EnHXdvWi9gaUAexjEZnB03lW7IVO7/exec"
 
@@ -31,7 +30,6 @@ def query_private_sheet(sheet_id: str, query: str) -> str:
             return f"Error: {result.get('error')}"
 
         # 2. Convert 2D array to Pandas DataFrame
-        # result['data'][0] is the header row, result['data'][1:] is the content
         raw_data = result.get("data")
         df = pd.DataFrame(raw_data[1:], columns=raw_data[0])
 
@@ -51,5 +49,9 @@ def query_private_sheet(sheet_id: str, query: str) -> str:
         return f"Python Error: {str(e)}"
 
 
-if __name__ == "__main__":
+def main():
     mcp.run()
+
+
+if __name__ == "__main__":
+    main()
